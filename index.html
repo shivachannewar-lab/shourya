@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AIRNOVA AI | Smart Air Purification</title>
+
+    <meta name="description" content="AIRNOVA AI smart air quality monitoring and purification dashboard.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+
+            <div>
+                <h2>AIRNOVA</h2>
+                <span>AI AIR MONITORING</span>
+            </div>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="#overview" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#air-quality" class="nav-link">
+                <span>◉</span> Air Quality
+            </a>
+
+            <a href="#device-control" class="nav-link">
+                <span>⏻</span> Device Control
+            </a>
+
+            <a href="#ai-insights" class="nav-link">
+                <span>✧</span> AI Insights
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="device-status">
+                <span class="status-dot offline"></span>
+
+                <div>
+                    <strong>Device Offline</strong>
+                    <small>Waiting for connection</small>
+                </div>
+            </div>
+
+            <p class="sidebar-footer">
+                AIRNOVA AI © 2026
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP NAVBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <div>
+                <span class="breadcrumb">Workspace /</span>
+                <strong>Dashboard</strong>
+            </div>
+
+            <div class="top-right">
+
+                <span class="connection-status">
+                    <span class="status-dot offline"></span>
+                    Not Connected
+                </span>
+
+                <div class="profile">AN</div>
+
+            </div>
+
+        </header>
+
+        <!-- OVERVIEW -->
+
+        <section id="overview" class="page-section">
+
+            <div class="welcome">
+
+                <div>
+                    <p class="eyebrow">AIR QUALITY MANAGEMENT</p>
+
+                    <h1>Dashboard Overview</h1>
+
+                    <p class="subtitle">
+                        Monitor your environment with AIRNOVA AI.
+                    </p>
+                </div>
+
+                <div class="date-box" id="currentDate">
+                    Loading date...
+                </div>
+
+            </div>
+
+            <!-- DEVICE NOTICE -->
+
+            <div class="notice">
+
+                <div class="notice-icon">ⓘ</div>
+
+                <div>
+                    <strong>Waiting for device connection</strong>
+
+                    <p>
+                        Your dashboard is ready.
+                        Connect your ESP32 and Firebase to receive
+                        real-time sensor readings.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- SENSOR CARDS -->
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Environmental Monitoring</h2>
+
+                    <p>Live sensor readings</p>
+                </div>
+
+                <span class="tag">NO LIVE DATA</span>
+
+            </div>
+
+            <div class="sensor-grid">
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-icon blue">♨</span>
+                        <span class="sensor-label">TEMPERATURE</span>
+                    </div>
+
+                    <h2>-- <small>°C</small></h2>
+
+                    <p>Waiting for DHT11</p>
+
+                </div>
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-icon purple">◌</span>
+                        <span class="sensor-label">HUMIDITY</span>
+                    </div>
+
+                    <h2>-- <small>%</small></h2>
+
+                    <p>Waiting for DHT11</p>
+
+                </div>
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-icon green">✣</span>
+                        <span class="sensor-label">DUST SENSOR</span>
+                    </div>
+
+                    <h2>-- <small>Raw</small></h2>
+
+                    <p>Waiting for dust sensor</p>
+
+                </div>
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-icon orange">◉</span>
+                        <span class="sensor-label">AIR QUALITY INDEX</span>
+                    </div>
+
+                    <h2>-- <small>AQI</small></h2>
+
+                    <p>Awaiting valid calculation</p>
+
+                </div>
+
+            </div>
+
+            <!-- AIR QUALITY -->
+
+            <div class="content-grid">
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Air Quality Monitoring</h2>
+
+                            <p>Air quality history and trends</p>
+                        </div>
+
+                        <span class="tag">PENDING DATA</span>
+
+                    </div>
+
+                    <div class="empty-chart">
+
+                        <div class="chart-icon">⌁</div>
+
+                        <h3>No readings available</h3>
+
+                        <p>
+                            Connect your sensors to display
+                            air quality trends here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Air Quality Status</h2>
+
+                            <p>Current air condition</p>
+                        </div>
+
+                    </div>
+
+                    <div class="quality-circle">
+
+                        <div>
+                            <h2>--</h2>
+                            <span>Awaiting data</span>
+                        </div>
+
+                    </div>
+
+                    <p class="quality-message">
+                        Air quality classification will appear
+                        when valid readings are available.
+                    </p>
+
+                    <div class="quality-scale">
+
+                        <span>Good</span>
+                        <span>Moderate</span>
+                        <span>Poor</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PARTICULATE MATTER -->
+
+            <div class="section-heading lower-heading">
+
+                <div>
+                    <h2>Particulate Matter</h2>
+
+                    <p>Airborne particle measurements</p>
+                </div>
+
+            </div>
+
+            <div class="sensor-grid two-cards">
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-label">PM2.5</span>
+                        <span class="sensor-icon green">◉</span>
+                    </div>
+
+                    <h2>-- <small>µg/m³</small></h2>
+
+                    <p>No measurement received</p>
+
+                </div>
+
+                <div class="sensor-card">
+
+                    <div class="card-top">
+                        <span class="sensor-label">PM10</span>
+                        <span class="sensor-icon blue">◉</span>
+                    </div>
+
+                    <h2>-- <small>µg/m³</small></h2>
+
+                    <p>No measurement received</p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- AIR QUALITY PAGE -->
+
+        <section id="air-quality" class="page-section">
+            <div class="page-header">
+             <h1>Air Quality Monitoring</h1>
+             <br>
+            <p>Live air quality information from your AIRNOVA device.</p>
+            </div>
+            <br>
+
+    <div class="content-grid">
+        <article class="panel">
+            <h2>PM2.5</h2>
+            <div class="metric-value">--</div>
+            <p>Waiting for sensor data</p>
+        </article>
+
+        <article class="panel">
+            <h2>PM10</h2>
+            <div class="metric-value">--</div>
+            <p>Waiting for sensor data</p>
+        </article>
+
+        <article class="panel">
+            <h2>Air Quality Index</h2>
+            <div class="metric-value">--</div>
+            <p>Waiting for sensor data</p>
+        </article>
+
+        <article class="panel">
+            <h2>Monitoring Status</h2>
+            <p>ESP32 connection pending</p>
+            <p>Sensor data will appear after hardware integration.</p>
+        </article>
+    </div>
+</section>
+
+        <!-- DEVICE CONTROL -->
+
+        <section id="device-control" class="page-section">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">HARDWARE MANAGEMENT</p>
+
+                <h1>Device Control</h1>
+
+                <p class="subtitle">
+                    Manage your AIRNOVA purification system.
+                </p>
+
+            </div>
+
+            <div class="notice warning">
+
+                <div class="notice-icon">!</div>
+
+                <div>
+                    <strong>Preview Mode</strong>
+
+                    <p>
+                        These controls are not connected to a physical fan.
+                        Firebase and ESP32 integration is still pending.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="control-grid">
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Fan Control</h2>
+                            <p>Manual operation interface</p>
+                        </div>
+                    </div>
+
+                    <div class="fan-display">
+
+                        <div class="fan-icon">✺</div>
+
+                        <div>
+                            <h3 id="fanStatus">Fan Unavailable</h3>
+                            <p id="fanMessage">Device not connected</p>
+                        </div>
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <button class="primary-btn" id="fanOn">
+                            TURN ON
+                        </button>
+
+                        <button class="secondary-btn" id="fanOff">
+                            TURN OFF
+                        </button>
+
+                    </div>
+
+                    <div class="speed-heading">
+
+                        <label for="fanSpeed">Fan Speed</label>
+
+                        <strong id="speedValue">0%</strong>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="fanSpeed"
+                        min="0"
+                        max="100"
+                        value="0"
+                        disabled
+                    >
+
+                    <p class="helper-text">
+                        Physical speed control will be enabled
+                        after ESP32 integration.
+                    </p>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Operating Mode</h2>
+                            <p>Planned operation settings</p>
+                        </div>
+                    </div>
+
+                    <div class="mode-card">
+
+                        <span class="mode-icon">✧</span>
+
+                        <div>
+                            <h3>Automatic Mode</h3>
+
+                            <p>
+                                Fan operation based on air quality.
+                            </p>
+                        </div>
+
+                        <span class="tag">PLANNED</span>
+
+                    </div>
+
+                    <div class="mode-card">
+
+                        <span class="mode-icon">☷</span>
+
+                        <div>
+                            <h3>Manual Mode</h3>
+
+                            <p>
+                                User-controlled fan operation.
+                            </p>
+                        </div>
+
+                        <span class="tag">PLANNED</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- AI INSIGHTS -->
+
+        <section id="ai-insights" class="page-section">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">ARTIFICIAL INTELLIGENCE</p>
+
+                <h1>AI Insights</h1>
+
+                <p class="subtitle">
+                    Intelligent environmental analysis.
+                </p>
+
+            </div>
+
+            <div class="notice">
+
+                <div class="notice-icon">✧</div>
+
+                <div>
+                    <strong>AI Model Not Connected</strong>
+
+                    <p>
+                        AI insights will be generated after
+                        the AI model and real sensor data
+                        are integrated.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="insight-grid">
+
+                <div class="panel insight-card">
+
+                    <span class="sensor-icon purple">⌁</span>
+
+                    <h2>Air Quality Analysis</h2>
+
+                    <p>
+                        AI-based analysis of environmental readings.
+                    </p>
+
+                    <span class="tag">COMING SOON</span>
+
+                </div>
+
+                <div class="panel insight-card">
+
+                    <span class="sensor-icon green">↗</span>
+
+                    <h2>Pollution Trends</h2>
+
+                    <p>
+                        Identify patterns using historical
+                        sensor measurements.
+                    </p>
+
+                    <span class="tag">COMING SOON</span>
+
+                </div>
+
+                <div class="panel insight-card">
+
+                    <span class="sensor-icon orange">✧</span>
+
+                    <h2>Smart Recommendations</h2>
+
+                    <p>
+                        AI-generated recommendations based
+                        on actual air quality data.
+                    </p>
+
+                    <span class="tag">COMING SOON</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SYSTEM STATUS -->
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <span>© 2026 AIRNOVA AI</span>
+
+            <span>
+                Clean Air | Smart Monitoring | Intelligent Control
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>
