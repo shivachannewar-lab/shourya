@@ -1,0 +1,27 @@
+{
+  "AIRNOVA": {
+    "device": {
+      "connectionStatus": "Offline",
+      "ipAddress": ""
+    },
+    "sensors": {
+      "temperature": null,
+      "humidity": null,
+      "dustRaw": null,
+      "aqi": null
+    },
+    "fan": {
+      "mode": "AUTO",
+      "status": "OFF",
+      "speed": 0
+    },
+    "ai": {
+      "recommendedSpeed": 0,
+      "recommendationAvailable": false
+    },
+    "system": {
+      "deviceStatus": "Offline",
+      "lastUpdated": null
+    }
+  }
+}
